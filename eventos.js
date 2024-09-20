@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'index.html';
     });
 
-
     const profileImage = document.getElementById('profileImage');
     const images = [
         'https://store-images.s-microsoft.com/image/apps.12468.13510798887966465.7d1db64d-e502-4431-8f30-dcf821216451.5df34879-cef6-4c4f-bd38-e5f0f453d57a',
@@ -44,17 +43,14 @@ document.addEventListener('DOMContentLoaded', function () {
             eventElement.className = 'event';
 
             const isJoined = event.joinedUser.includes(loggedInUser);
-
             const isEventFull = event.joinedUser.length > 0;
 
-
-            const message = event.joinedUser.length > 0
-                ? `${event.joinedUser.join(', ')} se juntou à sessão.` 
+            const message = isEventFull
+                ? `${event.joinedUser.join(', ')} se juntou à sessão.`
                 : 'Nenhum mestre se juntou a essa sessão.';
 
-
             if (isJoined) {
-                eventElement.classList.add('agreed'); 
+                eventElement.classList.add('agreed');
             }
 
             eventElement.innerHTML = `
@@ -72,46 +68,43 @@ document.addEventListener('DOMContentLoaded', function () {
             const disagreeButton = eventElement.querySelector('.disagree-button');
             const agreeCount = eventElement.querySelector('.agree-count');
 
-
             agreeButton.addEventListener('click', function () {
-                if (!isJoined && !isEventFull) {  
+                if (!isJoined && !isEventFull) {
                     event.agrees = 1;
-                    event.joinedUser.push(loggedInUser);  
-                    agreeCount.textContent = `${event.joinedUser.join(', ')} se juntou à sessão.`; 
-                    eventElement.classList.add('agreed');  
+                    event.joinedUser.push(loggedInUser);
+                    agreeCount.textContent = `${event.joinedUser.join(', ')} se juntou à sessão.`;
+                    eventElement.classList.add('agreed');
                     agreeButton.disabled = true;
                     disagreeButton.disabled = false;
 
-                    updateLocalStorage(event, index);  
+                    updateLocalStorage(event, index);
                 }
-                renderEvents(storedEvents); 
+                renderEvents(storedEvents);
             });
 
-
             disagreeButton.addEventListener('click', function () {
-                if (isJoined) { 
+                if (isJoined) {
                     event.agrees = 0;
-                    event.joinedUser = event.joinedUser.filter(user => user !== loggedInUser); 
-                    agreeCount.textContent = event.joinedUser.length > 0 
-                        ? `${event.joinedUser.join(', ')} se juntou à sessão.`  
+                    event.joinedUser = event.joinedUser.filter(user => user !== loggedInUser);
+                    agreeCount.textContent = event.joinedUser.length > 0
+                        ? `${event.joinedUser.join(', ')} se juntou à sessão.`
                         : 'Nenhum mestre se juntou a essa sessão.';
-                    
+
                     if (event.joinedUser.length === 0) {
-                        eventElement.classList.remove('agreed'); 
-                        agreeButton.disabled = false;  
+                        eventElement.classList.remove('agreed');
+                        agreeButton.disabled = false;
                     }
                     disagreeButton.disabled = true;
 
-                    updateLocalStorage(event, index); 
+                    updateLocalStorage(event, index);
                 }
-                renderEvents(storedEvents); 
+                renderEvents(storedEvents);
             });
 
             eventList.appendChild(eventElement);
         });
     }
 
-    
     function updateLocalStorage(event, index) {
         storedEvents[index] = event;
         localStorage.setItem('events', JSON.stringify(storedEvents));
@@ -123,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const category = filterCategory.value;
         const date = filterDate.value;
 
-        const filteredEvents = storedEvents.filter(event => 
+        const filteredEvents = storedEvents.filter(event =>
             (category === 'all' || event.category === category) &&
             (!date || event.date === date)
         );
@@ -135,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const category = filterCategory.value;
         const date = filterDate.value;
 
-        const filteredEvents = storedEvents.filter(event => 
+        const filteredEvents = storedEvents.filter(event =>
             (category === 'all' || event.category === category) &&
             (!date || event.date === date)
         );
