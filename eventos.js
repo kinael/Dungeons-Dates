@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     profileImage.addEventListener('click', function () {
         currentIndex = (currentIndex + 1) % images.length;
         profileImage.src = images[currentIndex];
-        localStorage.setItem('profileImage', images[currentIndex]); // Salvar a imagem atual no localStorage
+        localStorage.setItem('profileImage', images[currentIndex]); 
     });
 
     const filterCategory = document.getElementById('filterCategory');
