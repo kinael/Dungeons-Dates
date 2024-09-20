@@ -78,3 +78,11 @@ button:hover {
 .hidden {
     display: none;
 }
+
+#entrar, #cadastrar, #backToLoginBtn {
+margin-top: 12px;
+}
+
+#goToRegisterBtn {
+margin-top: -12px;
+}
