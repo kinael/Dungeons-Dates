@@ -11,17 +11,28 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'index.html';
     });
 
+    
+
+
     const profileImage = document.getElementById('profileImage');
-    const images = [
-        'https://store-images.s-microsoft.com/image/apps.12468.13510798887966465.7d1db64d-e502-4431-8f30-dcf821216451.5df34879-cef6-4c4f-bd38-e5f0f453d57a',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR62C0hNMP5MebR6qVKrGZmWCay5HbjwdBE-w&s',
-        'https://png.pngtree.com/png-clipart/20200224/original/pngtree-battle-axe-icon-cartoon-style-png-image_5227522.jpg'
+    const imageOptions = [
+        "https://store-images.s-microsoft.com/image/apps.12468.13510798887966465.7d1db64d-e502-4431-8f30-dcf821216451.5df34879-cef6-4c4f-bd38-e5f0f453d57a", 
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR62C0hNMP5MebR6qVKrGZmWCay5HbjwdBE-w&s", 
+        "https://png.pngtree.com/png-clipart/20200224/original/pngtree-battle-axe-icon-cartoon-style-png-image_5227522.jpg" 
     ];
-    let currentIndex = 0;
+
+    let currentImageIndex = 0;
+
+    const storedProfileImage = localStorage.getItem('profileImage');
+    if (storedProfileImage) {
+        profileImage.src = storedProfileImage;
+    }
 
     profileImage.addEventListener('click', function () {
-        currentIndex = (currentIndex + 1) % images.length;
-        profileImage.src = images[currentIndex];
+        currentImageIndex = (currentImageIndex + 1) % imageOptions.length;
+        const newImage = imageOptions[currentImageIndex];
+        profileImage.src = newImage;
+        localStorage.setItem('profileImage', newImage); 
     });
 
     const filterCategory = document.getElementById('filterCategory');
@@ -43,11 +54,14 @@ document.addEventListener('DOMContentLoaded', function () {
             eventElement.className = 'event';
 
             const isJoined = event.joinedUser.includes(loggedInUser);
+
             const isEventFull = event.joinedUser.length > 0;
+
 
             const message = event.joinedUser.length > 0
                 ? `${event.joinedUser.join(', ')} se juntou à sessão.` 
                 : 'Nenhum mestre se juntou a essa sessão.';
+
 
             if (isJoined) {
                 eventElement.classList.add('agreed'); 
@@ -68,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const disagreeButton = eventElement.querySelector('.disagree-button');
             const agreeCount = eventElement.querySelector('.agree-count');
 
+
             agreeButton.addEventListener('click', function () {
                 if (!isJoined && !isEventFull) {  
                     event.agrees = 1;
@@ -81,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 renderEvents(storedEvents); 
             });
+
 
             disagreeButton.addEventListener('click', function () {
                 if (isJoined) { 
@@ -105,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    
     function updateLocalStorage(event, index) {
         storedEvents[index] = event;
         localStorage.setItem('events', JSON.stringify(storedEvents));
