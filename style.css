@@ -1,0 +1,202 @@
+
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+
+
+.logout-button {
+    background-color: #e74c3c; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #c0392b; 
+}
+
+
+
+button:disabled {
+    background-color: #b0b0b0; 
+    color: #6c6c6c; 
+    cursor: not-allowed;
+    opacity: 0.6; 
+}
+
+body {
+    font-family: 'Garamond', serif; 
+    background-color: #f5f5dc; 
+    margin: 0;
+    padding: 0;
+    color: #333; 
+    background-image: url(imagem.jpg);
+
+
+    height: 100vh;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative; 
+}
+
+
+.sidebar {
+    width: 20%;
+    background-color: #8b5a2b; 
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-right: 40px;
+    min-height: 280px;
+    max-height: 80px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    color: #d4af37; 
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d4af37; 
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    color: #fff8f0;
+}
+
+
+.event-form {
+    width: 75%;
+}
+
+.event-form form {
+    background-color: #fff5e6; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.event-form h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #6e4b1d; 
+}
+
+.event-form input, .event-form select, .event-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #8b5a2b;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f4e4; 
+}
+
+.event-form button {
+    background-color: #6e4b1d; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.event-form button:hover {
+    background-color: #4e3a1e; 
+}
+
+
+#eventList {
+    background-color: #fff5e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.event {
+    background-color: #D2B48C; 
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.event.agreed {
+    background-color: #d4edda; 
+}
+
+.event h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #4e3a1e; 
+}
+
+.event p {
+    margin: 5px 0;
+    color: #6e4b1d; 
+}
+
+
+.agree-button, .disagree-button {
+    background-color: #6e4b1d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.agree-button:hover, .disagree-button:hover {
+    background-color: #4e3a1e; 
+}
+
+
+.mini-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 180px; 
+    height: 60px; 
+    background-color: #8b5a2b;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mini-container img {
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    margin-right: 10px;
+    cursor: pointer; 
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons&Dates - Encontre Seu Mestre</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="https://i.imgur.com/gLkxq2J.png" alt="Logo" class="logo" style="width: 100%; height: auto;">
+
+            <ul>
+                <li><a href="principal.html">Início</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+            </ul>
+        </div>
+
+        <div class="event-form">
+            <h1>Publicar uma Sessão</h1>
+            <form id="eventForm">
+                <input type="text" id="eventName" placeholder="Nome do Evento" required>
+                <input type="date" id="eventDate" required>
+                <input type="time" id="eventTime" required>
+                <select id="eventCategory" required>
+                    <option value="" disabled selected>   </option>
+                    <option value="Dungeons&Dragons">Dungeons&Dragons</option>
+                    <option value="Call of Cthulhu">Call of Cthulhu</option>
+                    <option value="Harry Potter">Harry Potter</option>
+                    <option value="Vampire: The Masquerade">Vampire: The Masquerade</option>
+                    <option value="Cyberpunk 2020">Cyberpunk 2020</option>
+                    <option value="GURPS">GURPS</option>
+                    <option value="Star Wars - Edge Of The Empire">Star Wars - Edge Of The Empire</option>
+                    <option value="Deadlands">Deadlands</option>
+                    <option value="The Witcher">The Witcher</option>
+                    <option value="Tormenta 20">Tormenta 20</option>
+                    <option value="Legend of the Five Rings">Legend of the Five Rings</option>
+                    <option value="Shadow of the Demon Lord">Shadow of the Demon Lord</option>
+                    <option value="Star Trek Adventures">Star Trek Adventures</option>
+                    <option value="Fate">Fate</option>
+                    <option value="Numenera">Numenera</option>
+                    <option value="Savage Worlds">Savage Worlds</option>
+                    <option value="Daemon">Daemon</option>
+                    <option value="Shadowrun">Shadowrun</option>
+                    <option value="Outro">Outro... (especifique no nome da sessão)</option>
+                </select>
+                <button type="submit">Publicar Evento</button>
+            </form>
+
+            <h2>Eventos Recentes</h2>
+            <div id="eventList"></div>
+        </div>
+
+<div class="mini-container">
+    <img id="profileImage" src="https://store-images.s-microsoft.com/image/apps.12468.13510798887966465.7d1db64d-e502-4431-8f30-dcf821216451.5df34879-cef6-4c4f-bd38-e5f0f453d57a" alt="Imagem de perfil">
+    <p id="usernameDisplay">Nome de usuário</p>
+    <button id="logoutButton" class="logout-button">Sair</button>
+</div>
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
