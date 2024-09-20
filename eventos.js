@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'index.html';
     });
 
-
     const profileImage = document.getElementById('profileImage');
     const images = [
         'https://store-images.s-microsoft.com/image/apps.12468.13510798887966465.7d1db64d-e502-4431-8f30-dcf821216451.5df34879-cef6-4c4f-bd38-e5f0f453d57a',
@@ -44,14 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
             eventElement.className = 'event';
 
             const isJoined = event.joinedUser.includes(loggedInUser);
-
             const isEventFull = event.joinedUser.length > 0;
-
 
             const message = event.joinedUser.length > 0
                 ? `${event.joinedUser.join(', ')} se juntou à sessão.` 
                 : 'Nenhum mestre se juntou a essa sessão.';
-
 
             if (isJoined) {
                 eventElement.classList.add('agreed'); 
@@ -72,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const disagreeButton = eventElement.querySelector('.disagree-button');
             const agreeCount = eventElement.querySelector('.agree-count');
 
-
             agreeButton.addEventListener('click', function () {
                 if (!isJoined && !isEventFull) {  
                     event.agrees = 1;
@@ -86,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 renderEvents(storedEvents); 
             });
-
 
             disagreeButton.addEventListener('click', function () {
                 if (isJoined) { 
@@ -111,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    
     function updateLocalStorage(event, index) {
         storedEvents[index] = event;
         localStorage.setItem('events', JSON.stringify(storedEvents));
