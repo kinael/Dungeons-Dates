@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Exibir o nome do usuário logado
     const usernameDisplay = document.getElementById('usernameDisplay');
     const loggedInUser = localStorage.getItem('loggedInUser');
     if (loggedInUser) {
@@ -9,19 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error("Usuário não está logado.");
     }
 
-    // Função de logout
     const logoutButton = document.getElementById('logoutButton');
     logoutButton.addEventListener('click', function () {
-        localStorage.removeItem('loggedInUser'); // Remover o usuário logado do localStorage
-        window.location.href = 'index.html'; // Redirecionar para a página de login
+        localStorage.removeItem('loggedInUser'); 
+        window.location.href = 'index.html'; 
     });
 
-    // Alterar a imagem de perfil ao clicar
     const profileImage = document.getElementById('profileImage');
     const imageOptions = [
         "https://store-images.s-microsoft.com/image/apps.12468.13510798887966465.7d1db64d-e502-4431-8f30-dcf821216451.5df34879-cef6-4c4f-bd38-e5f0f453d57a", 
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR62C0hNMP5MebR6qVKrGZmWCay5HbjwdBE-w&s", 
-        "https://png.pngtree.com/png-clipart/20200224/original/pngtree-battle-axe-icon-cartoon-style-png-image_5227522.jpg"
+        "https://png.pngtree.com/png-clipart/20200224/original/pngtree-battle-axe-icon-cartoon-style-png-image_5227522.jpg" 
     ];
 
     let currentImageIndex = 0;
@@ -35,24 +32,20 @@ document.addEventListener('DOMContentLoaded', function () {
         currentImageIndex = (currentImageIndex + 1) % imageOptions.length;
         const newImage = imageOptions[currentImageIndex];
         profileImage.src = newImage;
-        localStorage.setItem('profileImage', newImage); // Salvar a nova imagem no localStorage
+        localStorage.setItem('profileImage', newImage); 
     });
 
-    // Formulário de criação de eventos
     const eventForm = document.getElementById('eventForm');
     const eventList = document.getElementById('eventList');
     const eventDate = document.getElementById('eventDate');
 
-    // Definir data mínima e máxima para eventos
     const today = new Date().toISOString().split('T')[0];
     eventDate.setAttribute('min', today);
     eventDate.setAttribute('max', '2100-12-31');
 
-    // Recuperar eventos armazenados no localStorage
     const storedEvents = JSON.parse(localStorage.getItem('events')) || [];
     storedEvents.forEach(event => renderEvent(event));
 
-    // Submissão do formulário de eventos
     eventForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -71,22 +64,18 @@ document.addEventListener('DOMContentLoaded', function () {
             joinedUser: []
         };
 
-        // Adicionar evento ao localStorage
         storedEvents.push(event);
         localStorage.setItem('events', JSON.stringify(storedEvents));
 
-        // Renderizar o evento na página
         renderEvent(event);
-        eventForm.reset(); // Resetar o formulário
+        eventForm.reset();
     });
 
-    // Função para renderizar eventos na página
     function renderEvent(event) {
         const eventElement = document.createElement('div');
         eventElement.className = 'event';
         eventElement.dataset.id = event.id;
 
-        // Exibir mensagem dependendo se há um mestre no evento
         const message = event.agrees > 0
             ? `${event.joinedUser.join(', ')} se juntou à sessão.`
             : 'Nenhum mestre se juntou a essa sessão.';
@@ -97,9 +86,55 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>Hora: ${event.time}</p>
             <p>Categoria: ${event.category}</p>
             <p>Criado por: ${event.createdBy}</p>
-            <p>${message}</p>
+            <button class="agree-button">Juntar-se</button>
+            <button class="disagree-button" disabled>Desjuntar-se</button>
+            <span class="agree-count">${message}</span>
         `;
+
+        const currentUser = localStorage.getItem('loggedInUser');
+        const agreeButton = eventElement.querySelector('.agree-button');
+        const disagreeButton = eventElement.querySelector('.disagree-button');
+        const agreeCount = eventElement.querySelector('.agree-count');
+
+        if (event.joinedUser.includes(currentUser)) {
+            agreeButton.disabled = true;
+            disagreeButton.disabled = false;
+            eventElement.classList.add('agreed');
+        }
+
+        agreeButton.addEventListener('click', function () {
+            if (event.agrees === 0) {
+                event.agrees++;
+                event.joinedUser.push(currentUser);
+                agreeCount.textContent = `${event.joinedUser.join(', ')} se juntou à sessão.`;
+                eventElement.classList.add('agreed');
+                agreeButton.disabled = true;
+                disagreeButton.disabled = false;
+                updateEvent(event);
+            }
+        });
+
+        disagreeButton.addEventListener('click', function () {
+            if (event.agrees > 0) {
+                event.agrees--;
+                event.joinedUser = event.joinedUser.filter(user => user !== currentUser);
+                agreeCount.textContent = 'Nenhum mestre se juntou a essa sessão.';
+                eventElement.classList.remove('agreed');
+                agreeButton.disabled = false;
+                disagreeButton.disabled = true;
+                updateEvent(event);
+            }
+        });
 
         eventList.appendChild(eventElement);
     }
+
+    function updateEvent(updatedEvent) {
+        const index = storedEvents.findIndex(event => event.id === updatedEvent.id);
+        if (index !== -1) {
+            storedEvents[index] = updatedEvent;
+            localStorage.setItem('events', JSON.stringify(storedEvents));
+        }
+    }
+
 });
