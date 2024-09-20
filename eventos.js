@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (loggedInUser) {
         usernameDisplay.textContent = loggedInUser;
     }
+    
 
     const logoutButton = document.getElementById('logoutButton');
     logoutButton.addEventListener('click', function () {
