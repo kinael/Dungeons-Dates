@@ -6,5 +6,5 @@
   - Permite que o usuário publique uma sessão de RPG;
   - Permite que demais usuários se juntem a respectivas sessões.
 
-### Para analisar na prática, basta acessar o link via Github Pages: [https://kinael.github.io/faturaicone-di/](https://kinael.github.io/Dungeons-Dates/)
+### Para analisar na prática, basta acessar o link via Github Pages: https://kinael.github.io/Dungeons-Dates/
 
