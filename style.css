@@ -24,8 +24,6 @@
     background-color: #c0392b; 
 }
 
-
-
 button:disabled {
     background-color: #b0b0b0; 
     color: #6c6c6c; 
