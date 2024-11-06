@@ -7,10 +7,11 @@ body {
     overflow: hidden;
 }
 
+/* Ícone no canto inferior direito */
 .icon-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 2vh; /* Usa vh para posicionamento fixo relativo à janela */
+    right: 2vw;  /* Usa vw para posicionamento fixo relativo à janela */
     z-index: 10;
 }
 
@@ -24,10 +25,11 @@ body {
     transform: scale(1.2);
 }
 
+/* Ícone de informação no canto inferior esquerdo */
 .info-icon-container {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 2vh; /* Usa vh para posicionamento fixo relativo à janela */
+    left: 2vw;   /* Usa vw para posicionamento fixo relativo à janela */
     z-index: 10;
 }
 
