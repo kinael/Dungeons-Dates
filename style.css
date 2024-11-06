@@ -8,11 +8,11 @@
     width: 60px;
     height: auto;
     z-index: 10;
-    transition: transform 0.3s ease; /* Suaviza o efeito */
+    transition: transform 0.3s ease; 
 }
 
 .fixed-icon:hover {
-    transform: scale(1.2); /* Aumenta o ícone em 20% */
+    transform: scale(1.2); 
 }
 
 
