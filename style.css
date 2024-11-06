@@ -8,7 +8,13 @@
     width: 60px;
     height: auto;
     z-index: 10;
+    transition: transform 0.3s ease; /* Suaviza o efeito */
 }
+
+.fixed-icon:hover {
+    transform: scale(1.2); /* Aumenta o ícone em 20% */
+}
+
 
 .logout-button {
     background-color: #e74c3c; 
