@@ -16,7 +16,6 @@ function showScreen(screenToShow, screenToHide) {
     screenToShow.classList.remove('hidden');
 }
 
-
 loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
