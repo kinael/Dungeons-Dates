@@ -7,15 +7,12 @@ body {
     overflow: hidden;
 }
 
+/* Ícone no canto inferior direito */
 .icon-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaçamento entre os ícones */
     z-index: 10;
-    width: auto; /* Garante que os ícones fiquem alinhados horizontalmente */
 }
 
 .fixed-icon {
@@ -28,8 +25,16 @@ body {
     transform: scale(1.2);
 }
 
+/* Ícone de informação no canto inferior esquerdo */
+.info-icon-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
 .info-icon {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
+    width: 30px;
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
