@@ -64,14 +64,6 @@ backToLoginBtn.addEventListener('click', () => {
     showScreen(clientLoginScreen, registerScreen);
 });
 
-<script>
-    function showInfo() {
-        var infoText = document.getElementById("infoText");
-        infoText.classList.toggle("show");
-    }
-</script>
-
-
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
