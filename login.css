@@ -7,6 +7,50 @@ body {
     overflow: hidden;
 }
 
+.icon-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre os ícones */
+    z-index: 10;
+    width: auto; /* Garante que os ícones fiquem alinhados horizontalmente */
+}
+
+.fixed-icon {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.fixed-icon:hover {
+    transform: scale(1.2);
+}
+
+.info-icon {
+    width: 30px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.info-icon:hover {
+    transform: scale(1.2);
+}
+
+.hidden-text {
+    display: none;
+    font-size: 14px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.show {
+    display: inline;
+}
 
 canvas {
     position: fixed;
@@ -16,7 +60,6 @@ canvas {
     height: 100vh; 
     z-index: -1; 
 }
-
 
 .login-container {
     background-color: rgba(0, 0, 0, 0.8); 
@@ -53,55 +96,6 @@ input {
     font-size: 16px;
 }
 
-.icon-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre os ícones e o texto */
-    z-index: 10;
-}
-
-.fixed-icon {
-    width: 60px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.info-icon {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.info-icon:hover {
-    transform: scale(1.2);
-}
-
-.hidden-text {
-    display: none;
-    font-size: 14px;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.show {
-    display: inline;
-}
-
-
-.fixed-icon:hover {
-    transform: scale(1.2); 
-}
-
-
-
-
-
-
 button {
     background-color: #8b4513; 
     color: #f5f5dc; 
@@ -129,9 +123,9 @@ button:hover {
 }
 
 #entrar, #cadastrar, #backToLoginBtn {
-margin-top: 12px;
+    margin-top: 12px;
 }
 
 #goToRegisterBtn {
-margin-top: -12px;
+    margin-top: -12px;
 }
