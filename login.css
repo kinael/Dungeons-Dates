@@ -7,7 +7,6 @@ body {
     overflow: hidden;
 }
 
-/* Ícone no canto inferior direito */
 .icon-container {
     position: fixed;
     bottom: 20px;
@@ -25,7 +24,6 @@ body {
     transform: scale(1.2);
 }
 
-/* Ícone de informação no canto inferior esquerdo */
 .info-icon-container {
     position: fixed;
     bottom: 20px;
