@@ -10,8 +10,8 @@ body {
 /* Ícone no canto inferior direito */
 .icon-container {
     position: fixed;
-    bottom: 2vh; /* Usa vh para posicionamento fixo relativo à janela */
-    right: 2vw;  /* Usa vw para posicionamento fixo relativo à janela */
+    bottom: 20px; /* Usa px para garantir que o ícone permaneça fixo */
+    right: 20px;
     z-index: 10;
 }
 
@@ -28,8 +28,8 @@ body {
 /* Ícone de informação no canto inferior esquerdo */
 .info-icon-container {
     position: fixed;
-    bottom: 2vh; /* Usa vh para posicionamento fixo relativo à janela */
-    left: 2vw;   /* Usa vw para posicionamento fixo relativo à janela */
+    bottom: 20px; /* Usa px para garantir que o ícone permaneça fixo */
+    left: 20px;
     z-index: 10;
 }
 
