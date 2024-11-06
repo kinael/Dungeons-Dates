@@ -22,8 +22,6 @@ body {
     transform: scale(1.2); 
 }
 
-
-
 canvas {
     position: fixed;
     top: 0;
