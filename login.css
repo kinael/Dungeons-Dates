@@ -53,28 +53,20 @@ input {
     font-size: 16px;
 }
 
-.fixed-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: auto;
-    z-index: 10;
-    transition: transform 0.3s ease; 
-}
-
-.fixed-icon:hover {
-    transform: scale(1.2); 
-}
-
 .icon-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /* Espaço entre os ícones e o texto */
     z-index: 10;
+}
+
+.fixed-icon {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .info-icon {
@@ -94,12 +86,20 @@ input {
     background: rgba(0, 0, 0, 0.7);
     padding: 5px;
     border-radius: 5px;
-    margin-left: 10px;
 }
 
 .show {
     display: inline;
 }
+
+
+.fixed-icon:hover {
+    transform: scale(1.2); 
+}
+
+
+
+
 
 
 button {
