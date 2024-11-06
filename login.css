@@ -7,6 +7,21 @@ body {
     overflow: hidden;
 }
 
+.hidden-text {
+    display: none;
+    font-size: 14px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.show {
+    display: inline;
+}
+
+
 /* Ícone no canto inferior direito */
 .icon-container {
     position: fixed;
