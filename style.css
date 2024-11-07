@@ -433,22 +433,24 @@ button:disabled {
         box-sizing: border-box;
     }
 
-    /* Move username and logout button to the bottom of the screen */
-    .user-info {
-        position: fixed;
-        bottom: 10px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        background-color: #f8f5ec; /* Adjust background if needed */
-    }
-    
-    .user-info .username, .user-info .logout-button {
-        margin: 0 5px;
-        font-size: 1rem;
-    }
+ .user-info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f5ec; /* Ajuste de cor de fundo, se necessário */
+    border-top: 1px solid #ccc; /* Linha opcional para separação visual */
+}
+
+.user-info .username, 
+.user-info .logout-button {
+    margin: 0 10px;
+    font-size: 1rem;
+}
+
 
     /* Ensure full width for buttons in the "Publicar Evento" section */
     .event-form button {
