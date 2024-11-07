@@ -422,3 +422,40 @@ button:disabled {
         overflow: hidden;
     }
 }
+
+
+@media (max-width: 768px) {
+
+    /* Enlarge the "Publicar uma Sessão/Evento" section for better readability on mobile */
+    .event-form {
+        width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Move username and logout button to the bottom of the screen */
+    .user-info {
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: #f8f5ec; /* Adjust background if needed */
+    }
+    
+    .user-info .username, .user-info .logout-button {
+        margin: 0 5px;
+        font-size: 1rem;
+    }
+
+    /* Ensure full width for buttons in the "Publicar Evento" section */
+    .event-form button {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+}
