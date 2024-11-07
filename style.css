@@ -3,11 +3,10 @@
 
 body {
     font-family: 'Garamond', serif; 
-    background-color: #f5f5dc; 
+    background-color: #eee7d7; 
     margin: 0;
     padding: 0;
     color: #333; 
-    background-image: url("https://media.istockphoto.com/id/182154211/photo/old-paper-textere.jpg?s=612x612&w=0&k=20&c=u674siwSw4ff0Wdqs8Z3RehcXJLnx-40mZ21z19ra78=") !important;
     background-size: cover !important; 
     background-position: center !important; 
     background-repeat: no-repeat !important;
