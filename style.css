@@ -289,7 +289,6 @@ button:disabled {
         margin: 5px 0;
     }
     
-    /* Input and select elements full width */
     input[type="text"], input[type="password"], select {
         width: 100%;
         padding: 10px;
