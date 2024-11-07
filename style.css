@@ -43,12 +43,13 @@ body {
     margin: 0;
     padding: 0;
     color: #333; 
-background-image: url("https://i.imgur.com/Li1bRPN.jpeg");
-
-
-
+    background-image: url("https://i.imgur.com/Li1bRPN.jpeg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
     height: 100vh;
 }
+
 
 
 .container {
