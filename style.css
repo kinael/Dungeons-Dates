@@ -208,15 +208,12 @@ button:disabled {
 }
 
 
-/* Mobile Styles */
 @media (max-width: 768px) {
 
-    /* General body adjustments for mobile */
     body {
         padding: 10px;
     }
     
-    /* Adjust button and fixed icon sizes for smaller screens */
     .fixed-icon {
         width: 45px;
         bottom: 15px;
@@ -228,12 +225,10 @@ button:disabled {
         font-size: 14px;
     }
 
-    /* Resize headings and container margins for mobile readability */
     h1, h2, h3, h4, h5, h6 {
         font-size: calc(1.5rem + 1vw);
     }
 
-    /* Adjustments for form elements */
     form {
         padding: 15px;
     }
@@ -244,7 +239,6 @@ button:disabled {
         font-size: 1rem;
     }
 
-    /* Adjust container width for mobile screens */
     .container {
         max-width: 100%;
         padding: 0;
@@ -255,32 +249,27 @@ button:disabled {
 
 @media (max-width: 768px) {
 
-    /* Remove horizontal scrolling */
     body {
         overflow-x: hidden;
     }
 
-    /* Center the main content and adjust spacing */
     .container, .content {
         width: 90%;
         margin: 0 auto;
         padding: 0 10px;
     }
 
-    /* Sidebar adjustments for smaller screens */
     .sidebar {
         width: 100%;
         text-align: center;
         padding: 10px 0;
     }
     
-    /* Header adjustments for proper scaling on mobile */
     header, .header-title {
         font-size: 1.2rem;
         text-align: center;
     }
 
-    /* Adjust text and button sizes for better readability */
     .btn, button {
         width: 100%;
         font-size: 1rem;
