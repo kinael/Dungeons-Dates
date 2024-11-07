@@ -207,3 +207,48 @@ button:disabled {
     margin-right: 10px;
     cursor: pointer; 
 }
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    /* General body adjustments for mobile */
+    body {
+        padding: 10px;
+    }
+    
+    /* Adjust button and fixed icon sizes for smaller screens */
+    .fixed-icon {
+        width: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .logout-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    /* Resize headings and container margins for mobile readability */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: calc(1.5rem + 1vw);
+    }
+
+    /* Adjustments for form elements */
+    form {
+        padding: 15px;
+    }
+
+    input[type="text"], input[type="password"], textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    /* Adjust container width for mobile screens */
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
