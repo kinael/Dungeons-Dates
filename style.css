@@ -294,7 +294,6 @@ button:disabled {
         margin: 5px 0;
     }
     
-    /* Additional adjustments for any form-related layout */
     form {
         padding: 10px;
     }
@@ -303,12 +302,10 @@ button:disabled {
 
 @media (max-width: 768px) {
 
-    /* Ensure the body does not overflow horizontally */
     body {
         overflow-x: hidden;
     }
 
-    /* Full width for containers on mobile and centering */
     .container, .main-content {
         width: 100%;
         max-width: 100%;
@@ -316,7 +313,6 @@ button:disabled {
         margin: 0 auto;
     }
 
-    /* Adjustments for sidebar on mobile - collapsible style */
     .sidebar {
         width: 100%;
         padding: 10px 0;
@@ -325,14 +321,12 @@ button:disabled {
         align-items: center;
     }
 
-    /* Header and titles - smaller font sizes for mobile readability */
     header, .header-title, h1, h2, h3, h4, h5, h6 {
         font-size: 1.2rem;
         text-align: center;
         margin: 10px 0;
     }
 
-    /* Full width and adjusted spacing for buttons */
     .btn, button {
         width: 100%;
         font-size: 1rem;
@@ -340,7 +334,6 @@ button:disabled {
         margin: 8px 0;
     }
 
-    /* Full width inputs and select elements, adjusted padding */
     input[type="text"], input[type="password"], select, textarea {
         width: 100%;
         padding: 10px;
@@ -348,19 +341,18 @@ button:disabled {
         font-size: 1rem;
     }
 
-    /* Form adjustments for mobile layout */
     form {
         width: 100%;
         padding: 10px;
     }
 
-    /* Ensuring event section and other content blocks align and fit within viewport */
+  
     .event-section, .content-block {
         width: 100%;
         padding: 10px;
     }
     
-    /* Remove any fixed positioning causing issues on mobile */
+    
     .fixed-icon {
         position: absolute;
         bottom: 15px;
@@ -368,7 +360,7 @@ button:disabled {
         width: 45px;
     }
 
-    /* Menu bar should collapse nicely on mobile */
+   
     .menu-bar {
         display: flex;
         flex-direction: column;
@@ -380,14 +372,13 @@ button:disabled {
 
 @media (max-width: 768px) {
 
-    /* Ensure text and content stay within container boundaries */
+ 
     .content-container, .main-content, .event-section {
         width: 100%;
         padding: 0 15px;
         box-sizing: border-box;
     }
     
-    /* Ensure text fits within brown layout container */
     .header-title, .section-title, .event-form {
         max-width: 100%;
         padding: 10px;
@@ -395,27 +386,27 @@ button:disabled {
         text-align: center;
     }
     
-    /* Button alignment and full width for better display on small screens */
+
     .event-form button {
         width: 100%;
         font-size: 1rem;
         padding: 12px;
     }
 
-    /* Force resizing of sidebar and header to fit smaller screens */
+
     .sidebar, .header {
         width: 100%;
         max-width: 100%;
     }
 
-    /* Adjust font sizes for better readability and fitting on mobile */
+
     h1, h2, h3, h4, h5, h6 {
         font-size: 1.1rem;
         text-align: center;
         padding: 0 5px;
     }
 
-    /* Avoid overflow of inner text or elements */
+
     .inner-content, .form-group {
         overflow: hidden;
     }
@@ -424,7 +415,7 @@ button:disabled {
 
 @media (max-width: 768px) {
 
-    /* Enlarge the "Publicar uma Sessão/Evento" section for better readability on mobile */
+
     .event-form {
         width: 95%;
         margin: 0 auto;
@@ -435,13 +426,15 @@ button:disabled {
  .user-info {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: #f8f5ec; /* Ajuste de cor de fundo, se necessário */
-    border-top: 1px solid #ccc; /* Linha opcional para separação visual */
+    background-color: #f8f5ec; 
+    border-top: 1px solid #ccc; 
+    z-index: 100; 
 }
 
 .user-info .username, 
@@ -451,7 +444,6 @@ button:disabled {
 }
 
 
-    /* Ensure full width for buttons in the "Publicar Evento" section */
     .event-form button {
         width: 100%;
         font-size: 1.1rem;
