@@ -7,9 +7,6 @@ body {
     margin: 0;
     padding: 0;
     color: #333; 
-    background-size: cover !important; 
-    background-position: center !important; 
-    background-repeat: no-repeat !important;
     height: 100vh;
 }
 
