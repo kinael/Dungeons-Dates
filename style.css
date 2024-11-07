@@ -252,3 +252,52 @@ button:disabled {
         margin: 0 auto;
     }
 }
+
+
+@media (max-width: 768px) {
+
+    /* Remove horizontal scrolling */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Center the main content and adjust spacing */
+    .container, .content {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    /* Sidebar adjustments for smaller screens */
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    /* Header adjustments for proper scaling on mobile */
+    header, .header-title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /* Adjust text and button sizes for better readability */
+    .btn, button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+        margin: 5px 0;
+    }
+    
+    /* Input and select elements full width */
+    input[type="text"], input[type="password"], select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+    }
+    
+    /* Additional adjustments for any form-related layout */
+    form {
+        padding: 10px;
+    }
+}
