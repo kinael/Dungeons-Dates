@@ -301,3 +301,80 @@ button:disabled {
         padding: 10px;
     }
 }
+
+
+@media (max-width: 768px) {
+
+    /* Ensure the body does not overflow horizontally */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Full width for containers on mobile and centering */
+    .container, .main-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    /* Adjustments for sidebar on mobile - collapsible style */
+    .sidebar {
+        width: 100%;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Header and titles - smaller font sizes for mobile readability */
+    header, .header-title, h1, h2, h3, h4, h5, h6 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Full width and adjusted spacing for buttons */
+    .btn, button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+        margin: 8px 0;
+    }
+
+    /* Full width inputs and select elements, adjusted padding */
+    input[type="text"], input[type="password"], select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        font-size: 1rem;
+    }
+
+    /* Form adjustments for mobile layout */
+    form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Ensuring event section and other content blocks align and fit within viewport */
+    .event-section, .content-block {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    /* Remove any fixed positioning causing issues on mobile */
+    .fixed-icon {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+    }
+
+    /* Menu bar should collapse nicely on mobile */
+    .menu-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
